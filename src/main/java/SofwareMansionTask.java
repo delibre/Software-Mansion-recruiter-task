@@ -13,14 +13,11 @@ public class SofwareMansionTask{
             }
         }
 
-        List<Integer> resultSequence = new ArrayList<>(A);
+        List<Integer> resultSequence = new ArrayList<>();
         for (Integer value : A) {
             Integer valueQuantityB = sequenceB.get(value);
-            if(valueQuantityB == null) {
-                continue;
-            }
-            if (isPrime(valueQuantityB)) {
-                resultSequence.remove(value);
+            if(valueQuantityB == null || !(isPrime(valueQuantityB))) {
+                resultSequence.add(value);
             }
         }
         return resultSequence;
